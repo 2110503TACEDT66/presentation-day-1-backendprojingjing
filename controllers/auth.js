@@ -75,16 +75,16 @@ const sendTokenResponse=(user,statusCode,res)=>{
     if(process.env.NODE_ENV==='production'){
         options.secure=true;
     }
-    res.status(statusCode).cookie('token',token,options).json({
-        success:true,
-        _id:user._id,
-        name:user.name,
+    
+    res.status(statusCode).cookie("token", token, options).json({
+        success: true,
+        _id: user._id,
+        name: user.name,
         telephone_number:user.telephone_number,
         email: user.email,
         role:user.role,
-        createdAt: user.createdAt,
         token,
-    });
+      });
 
 }
 
